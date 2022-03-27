@@ -6,7 +6,7 @@ export default function Board({ generation, setGeneration, isStarted, grid, SetG
 
   useEffect(() => {
     if (isStarted) {
-      setTimeout(evaluate, 100);
+      setTimeout(evaluate, 1);
     }
   }, [generation, isStarted]);
 
@@ -78,7 +78,7 @@ export default function Board({ generation, setGeneration, isStarted, grid, SetG
       for (var i = 0; i < gridCopy.length; i++) {
         gridCopy[i] = [...gridCopy[i]];
       }
-      gridCopy[row][col] = 1;
+      gridCopy[row][col] = gridCopy[row][col] === 1 ? 0 : 1;
       SetGrid(gridCopy);
     }
   };
